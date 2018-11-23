@@ -1,0 +1,5 @@
+#!/bin/bash
+. /etc/apache2/envvars
+export MYSQL_HISTFILE=~/.mysql_history
+~/bin/sql_bu
+mysql -u $DB_USER -p$DB_PASS $DB_NAME

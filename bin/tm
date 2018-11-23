@@ -1,0 +1,10 @@
+#!/bin/bash
+
+tmux -f ~/.tmux attach
+
+if [[ "$?" == "0" ]]; then
+        echo "Done"
+else
+        tmux -f ~/.tmux
+fi
+

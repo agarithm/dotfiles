@@ -1,0 +1,10 @@
+#!/bin/bash
+. /etc/apache2/envvars
+NOW=`date +%s`
+mkdir -p /root/sql_backup
+OUTPUT="/root/sql_backup/${NOW}.gz"
+echo Storing $OUTPUT
+mysqldump -u $DB_USER -p$DB_PASS $DB_NAME | gzip - > $OUTPUT
+OUTPUT="/root/sql_backup/${NOW}-wp.gz"
+echo Storing $OUTPUT
+mysqldump -u $DB_USER -p$DB_PASS asset_direct_blog | gzip - > $OUTPUT
