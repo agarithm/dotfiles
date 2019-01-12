@@ -161,4 +161,5 @@ filetype on
 autocmd FileType php set keywordprg=pman
 autocmd FileType ctp set keywordprg=pman
 
-
+" Rainbow brackets
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
