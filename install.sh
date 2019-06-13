@@ -31,3 +31,4 @@ make_link $DOT_BASE/.bashrc ~/.bashrc
 make_link $DOT_BASE/.selected_editor ~/.selected_editor
 make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
+make_link $DOT_BASE/.vim ~/.vim
