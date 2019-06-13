@@ -1,3 +1,5 @@
+set modelines=0
+set nomodeline
 set nocp
 set background=dark
 set nowrap
