@@ -4,4 +4,4 @@ NOW=`date +%s`
 mkdir -p /root/sql_backup
 OUTPUT="/root/sql_backup/${NOW}.gz"
 echo Storing $OUTPUT
-mysqldump -u $DB_USER -p$DB_PASS --single-transaction --skip-lock-tables $DB_NAME | gzip - > $OUTPUT
+mysqldump -u $DB_USER -p$DB_PASS -h $DB_HOST --single-transaction --skip-lock-tables $DB_NAME | gzip - > $OUTPUT

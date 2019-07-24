@@ -17,7 +17,6 @@ bind-key s split-window -v
 
 ## Status bar design
 # status line
-set -g status-utf8 on
 set -g status-justify left
 set -g status-bg default
 set -g status-fg colour12

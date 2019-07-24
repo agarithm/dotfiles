@@ -145,5 +145,6 @@ function parse_git_dirty {
         fi
 }
 
-export PS1="\[\e[36m\]\w\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\\$\[\e[m\] "
+MACHNAME=`uname -a |cut -f2 -d ' '`
+export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
