@@ -148,3 +148,5 @@ function parse_git_dirty {
 MACHNAME=`uname -a |cut -f2 -d ' '`
 export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

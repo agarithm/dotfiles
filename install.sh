@@ -42,3 +42,6 @@ git clone https://github.com/codota/tabnine-vim.git
 cd tabnine-vim 
 ./install.py
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/fzf/install
+
