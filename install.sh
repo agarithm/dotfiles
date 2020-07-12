@@ -25,10 +25,20 @@ script=`readlink -f $0`
 REPO_BASE=`dirname $script`
 DOT_BASE=$REPO_BASE/prefs
 
-
 make_link $REPO_BASE/bin ~/bin
 make_link $DOT_BASE/.bashrc ~/.bashrc
 make_link $DOT_BASE/.selected_editor ~/.selected_editor
 make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
+
+sudo apt-get update
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag
+
+mkdir ~/projects
+cd ~/projects
+
+git clone https://github.com/codota/tabnine-vim.git
+cd tabnine-vim 
+./install.py
+
