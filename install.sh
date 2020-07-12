@@ -33,13 +33,15 @@ make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
 
 sudo apt-get update
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli
+
+sudo pear install doc.php.net/pman
 
 mkdir ~/projects
 cd ~/projects
 
 git clone https://github.com/codota/tabnine-vim.git
-cd tabnine-vim 
+cd tabnine-vim
 ./install.py
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
