@@ -31,11 +31,14 @@ make_link $DOT_BASE/.selected_editor ~/.selected_editor
 make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
+make_link $DOT_BASE/.ctags ~/.ctags
 
 sudo apt-get update
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags
 
 sudo pear install doc.php.net/pman
+
+sudo snap install universal-ctags
 
 mkdir ~/projects
 cd ~/projects
@@ -52,10 +55,16 @@ git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
 git config --global core.pager "~/.dsf/diff-so-fancy | less -SrRFX --pattern '^(Date|added|deleted|modified):'"
 git config --global color.ui true
 
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global alias.dt difftool
+git config --global merge.tool vimdiff
+git config --global mergetool.prompt false
+git config --global alias.mt mergetool
 git config --global color.diff-highlight.oldNormal    "red bold"
-git config --global color.diff-highlight.oldHighlight "208 88"
+git config --global color.diff-highlight.oldHighlight "220 88"
 git config --global color.diff-highlight.newNormal    "green bold"
-git config --global color.diff-highlight.newHighlight "green bold 28"
+git config --global color.diff-highlight.newHighlight "220 22"
 
 git config --global color.diff.meta       "14"
 git config --global color.diff.frag       "magenta bold"
