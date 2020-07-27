@@ -38,8 +38,6 @@ sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev pyt
 
 sudo pear install doc.php.net/pman
 
-sudo snap install universal-ctags
-
 mkdir ~/projects
 cd ~/projects
 
