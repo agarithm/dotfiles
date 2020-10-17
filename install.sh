@@ -33,8 +33,11 @@ make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
 
+cd ~
 sudo apt-get update
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags
+sudo apt-get -y upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags libssl-dev python2.7 nodejs npm
 
 sudo pear install doc.php.net/pman
 
@@ -43,10 +46,10 @@ cd ~/projects
 
 git clone https://github.com/codota/tabnine-vim.git
 cd tabnine-vim
-./install.py
+sudo ./install.py
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+sudo ~/.fzf/install
 
 # diff-so-fancy
 git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
