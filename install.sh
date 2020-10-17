@@ -38,6 +38,8 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get dist-upgrade
 sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags libssl-dev python2.7 nodejs npm
+sudo apt-get ctags
+
 
 sudo pear install doc.php.net/pman
 
@@ -73,3 +75,13 @@ git config --global color.diff.commit     "yellow bold"
 git config --global color.diff.old        "red bold"
 git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
+
+
+echo " "
+echo " "
+echo "SETUP GIT IDENTITY "
+echo "~~~~~~~~~~~~~~~~~~ "
+read -p "Full Name for git commits: " GITNAME
+read -p "Email Address for git commits: " GITEMAIL
+git config --global user.name "$GITNAME"
+git config --global user.email "$GITEMAIL"
