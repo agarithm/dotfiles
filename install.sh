@@ -34,7 +34,7 @@ make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
 
 sudo apt-get update
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags xclip
 
 sudo pear install doc.php.net/pman
 
