@@ -33,8 +33,12 @@ make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
 
+cd ~
 sudo apt-get update
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags xclip
+sudo apt-get -y upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 nodejs xclip
+sudo apt-get ctags
 
 sudo pear install doc.php.net/pman
 
@@ -43,10 +47,10 @@ cd ~/projects
 
 git clone https://github.com/codota/tabnine-vim.git
 cd tabnine-vim
-./install.py
+sudo ./install.py
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+sudo ~/.fzf/install
 
 # diff-so-fancy
 git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
@@ -70,3 +74,13 @@ git config --global color.diff.commit     "yellow bold"
 git config --global color.diff.old        "red bold"
 git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
+
+
+echo " "
+echo " "
+echo "SETUP GIT IDENTITY "
+echo "~~~~~~~~~~~~~~~~~~ "
+read -p "Full Name for git commits: " GITNAME
+read -p "Email Address for git commits: " GITEMAIL
+git config --global user.name "$GITNAME"
+git config --global user.email "$GITEMAIL"

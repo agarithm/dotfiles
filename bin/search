@@ -1,3 +1,0 @@
-#!/bin/bash
-grep -ri $@ /projects/loanconnect/app/tmp/logs/* --color=always | less -SR
-
