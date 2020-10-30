@@ -196,4 +196,5 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
                             \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
                             \ '*var/cache*', '*var/log*', '*.git*']
 
-let g:gutentags_project_root = ['.git','.htaccess']
+let g:gutentags_project_root = ['.htaccess']
+let g:gutentags_add_default_project_roots = 0
