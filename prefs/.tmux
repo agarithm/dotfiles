@@ -9,6 +9,9 @@ setw -g mode-keys vi
 setw -g monitor-activity on
 bind-key v split-window -h
 bind-key s split-window -v
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 
 ######################
