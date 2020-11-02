@@ -34,12 +34,11 @@ make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
 
 cd ~
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get dist-upgrade
-sudo apt-get install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 nodejs xclip
-sudo apt-get ctags
-
+sudo apt-get -y dist-upgrade
+sudo apt-get -y install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd
+sudo snap install node --channel=12/stable --classic
 sudo pear install doc.php.net/pman
 
 mkdir ~/projects
