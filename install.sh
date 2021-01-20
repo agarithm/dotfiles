@@ -32,12 +32,13 @@ make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
+make_link $DOT_BASE/.config/i3 ~/.config/i3
 
 cd ~
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install unattended-upgrades mc git tmux python cmake python-dev python-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd
+sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd
 sudo apt-get -y install ctags
 sudo snap install node --channel=12/stable --classic
 sudo pear install doc.php.net/pman
