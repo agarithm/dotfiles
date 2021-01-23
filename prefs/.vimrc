@@ -1,7 +1,7 @@
 set modelines=0
 set nomodeline
 set nocp
-set background=dark
+set background=light
 set nowrap
 set noswapfile
 set nobackup

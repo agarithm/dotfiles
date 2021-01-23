@@ -19,11 +19,17 @@ default_orientation horizontal
 client.focused        #0F0F0F #7FB256 #F5F5FF
 client.focused_inactive    #0F0F0F #7FB256 #E5E5E5
 client.unfocused    #0F0F0F #5697B2 #E5E5E5
-client.urgent        #0F0F0F #BC9B54 #E5E5E5
+client.urgent        #0F0F0F #BC9B54 #E5E5E5~~~~
+
+#exec xrdb -l ~/.Xdefaults
+#exec xsetroot -mod 1 1 -fg mediumslateblue -bg lightslategray
+#exec xset +fp /usr/local/share/fonts/programing/
+#exec xset fp rehash
+exec hsetroot -extend ~/.config/i3/spot-lights.jpg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 14
 bindsym $ALT+F4 kill
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
