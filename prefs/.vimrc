@@ -10,6 +10,7 @@ set mouse=a
 set ttymouse=sgr
 set foldmethod=indent
 set foldlevel=30
+colo zellner
 
 match ErrorMsg '\s\+$'
 hi CursorColumn ctermfg=black ctermbg=darkgray cterm=bold guifg=black guibg=darkgray  gui=bold
@@ -169,7 +170,7 @@ autocmd FileType php set keywordprg=pman
 autocmd FileType ctp set keywordprg=pman
 
 " Rainbow brackets
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 "Syntactic Settings
 set statusline+=%#warningmsg#
