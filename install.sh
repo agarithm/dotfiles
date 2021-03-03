@@ -38,7 +38,7 @@ cd ~
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd
+sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd rename
 sudo apt-get -y install ctags
 sudo snap install node --channel=12/stable --classic
 sudo pear install doc.php.net/pman
