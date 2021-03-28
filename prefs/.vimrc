@@ -167,6 +167,7 @@ endif
 filetype on
 autocmd FileType php set keywordprg=pman
 autocmd FileType ctp set keywordprg=pman
+autocmd BufRead,BufNewFile *.vue set filetype=html
 
 " Rainbow brackets
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -194,6 +195,6 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
                             \ '*.phar', '*.ini', '*.rst', '*.md', '*.swp',
                             \ '*vendor/*/test*', '*vendor/*/Test*',
                             \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
-                            \ '*var/cache*', '*var/log*', '*.git*']
+                            \ '*var/cache*', '*var/log*', '*.git*','node_modules']
 
 let g:gutentags_project_root = ['.git','.htaccess']

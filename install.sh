@@ -27,6 +27,7 @@ DOT_BASE=$REPO_BASE/prefs
 
 make_link $REPO_BASE/bin ~/bin
 make_link $DOT_BASE/.bashrc ~/.bashrc
+make_link $DOT_BASE/.gitignore ~/.gitignore
 make_link $DOT_BASE/.selected_editor ~/.selected_editor
 make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
