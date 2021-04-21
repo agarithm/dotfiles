@@ -27,6 +27,7 @@ DOT_BASE=$REPO_BASE/prefs
 
 make_link $REPO_BASE/bin ~/bin
 make_link $DOT_BASE/.bashrc ~/.bashrc
+make_link $DOT_BASE/.gitignore ~/.gitignore
 make_link $DOT_BASE/.selected_editor ~/.selected_editor
 make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
@@ -38,7 +39,7 @@ cd ~
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install unattended-upgrades vim mc git tmux python python3 cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd hsetroot
+sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd rename hsetroot
 sudo apt-get -y install ctags
 sudo snap install node --channel=12/stable --classic
 sudo pear install doc.php.net/pman
@@ -55,7 +56,7 @@ sudo ~/.fzf/install
 ~/.fzf/install
 
 # diff-so-fancy
-git clone https://github.com/so-fancy/diff-so-fancy.git ~/.dsf
+git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
 git config --global core.pager "~/.dsf/diff-so-fancy | less -SrRFX --pattern '^(Date|added|deleted|modified):'"
 git config --global color.ui true
 

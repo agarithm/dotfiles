@@ -189,9 +189,9 @@ HEREDOC
 
 _simple() {
   printf "Replacing all instancese of $1 with $2.\\n"
-  find . -type d -not -path '*/.git/*' -exec rename "s/$1/$2/g" {} \;
-  find . -type f -not -path '*/.git/*' -exec rename "s/$1/$2/g" {} \;
-  find . -type f -not -path '*/.git/*' -exec sed -i -e "s/$1/$2/g" {} \;
+  find . -type d -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/vendor/*' -exec rename "s/$1/$2/g" {} \;
+  find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/vendor/*' -exec rename "s/$1/$2/g" {} \;
+  find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/vendor/*' -exec sed -i -e "s/$1/$2/g" {} \;
 }
 
 ###############################################################################

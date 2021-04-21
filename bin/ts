@@ -1,4 +1,4 @@
 #!/bin/bash
 # find . -type f |grep -v webroot |grep -v tmp.logs| xargs -d '\n' grep -n -i --exclude=*.min.?s* --color=always $1 |less -SR
-ag --pager 'less -SRr' $@
+ag --pager 'less -SRr' -p ~/.gitignore $@
 
