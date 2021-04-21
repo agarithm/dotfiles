@@ -8,7 +8,7 @@ set nobackup
 set nowritebackup
 set mouse=a
 set ttymouse=sgr
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=30
 
 match ErrorMsg '\s\+$'
@@ -183,7 +183,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 1
 
-"set rtp+=~/projects/tabnine-vim
+set rtp+=~/projects/tabnine-vim
 set rtp+=~/.fzf
 
 map <F3> :FZF<cr>
@@ -198,3 +198,5 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
                             \ '*var/cache*', '*var/log*', '*.git*','node_modules']
 
 let g:gutentags_project_root = ['.git','.htaccess']
+
+map <F1> <Esc>

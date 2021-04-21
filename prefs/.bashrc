@@ -97,7 +97,7 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-PATH="$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:~/.npm-global/bin:$PATH"
 # get current branch in git repo
 function parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
