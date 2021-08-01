@@ -186,7 +186,6 @@ let g:syntastic_auto_jump = 1
 set rtp+=~/projects/tabnine-vim
 set rtp+=~/.fzf
 
-map <F3> :FZF<cr>
 
 " Where to store tag files
 let g:gutentags_cache_dir = '~/.vim/gutentags'
@@ -200,3 +199,17 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
 let g:gutentags_project_root = ['.git','.htaccess']
 
 map <F1> <Esc>
+map <F3> :FZF<cr>
+map <F4> :set number! relativenumber!<cr>
+
+
+" Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+
