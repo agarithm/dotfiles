@@ -174,6 +174,9 @@ autocmd BufRead,BufNewFile *.vue set filetype=html
 let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 "Syntactic Settings
+let g:syntastic_mode_map = { 'mode': 'active',
+                            \ 'active_filetypes': ['python', 'javascript'],
+                            \ 'passive_filetypes': [] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -183,11 +186,11 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
 set rtp+=~/projects/tabnine-vim
 set rtp+=~/.fzf
 
-map <F3> :FZF<cr>
 
 " Where to store tag files
 let g:gutentags_cache_dir = '~/.vim/gutentags'
@@ -201,3 +204,17 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
 let g:gutentags_project_root = ['.git','.htaccess']
 
 map <F1> <Esc>
+map <F3> :FZF<cr>
+map <F4> :set number! relativenumber!<cr>
+
+
+" Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+

@@ -1,7 +1,7 @@
 "============================================================================
-"File:        solc.vim
-"Description: Solidity syntax checker - using solc
-"Maintainer:  Jacob Cholewa <jacob@cholewa.dk>
+"File:        sorbet.vim
+"Description: Syntax checking plugin for syntastic
+"Maintainer:  Tom Morton <tomm@riseup.net>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -10,29 +10,37 @@
 "
 "============================================================================
 
-if exists('g:loaded_syntastic_solidity_solc_checker')
+if exists('g:loaded_syntastic_ruby_sorbet_checker')
     finish
 endif
-let g:loaded_syntastic_solidity_solc_checker = 1
+let g:loaded_syntastic_ruby_sorbet_checker = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! SyntaxCheckers_solidity_solc_GetLocList() dict
-    let makeprg = self.makeprgBuild({})
+function! SyntaxCheckers_ruby_sorbet_IsAvailable() dict
+    if !executable(self.getExec())
+        return 0
+    endif
+    return syntastic#util#versionIsAtLeast(self.getVersion(), [0, 1, 0])
+endfunction
 
-    let errorformat =
-        \ '%f:%l:%c: %trror: %m,' .
-        \ '%f:%l:%c: %tarning: %m'
+function! SyntaxCheckers_ruby_sorbet_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'args_before': 'tc' })
+
+    let errorformat = '%f:%l: %m'
 
     return SyntasticMake({
         \ 'makeprg': makeprg,
-        \ 'errorformat': errorformat })
+        \ 'errorformat': errorformat,
+        \ 'type': 'E',
+        \ 'subtype': 'Style' })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'solidity',
-    \ 'name': 'solc'})
+    \ 'filetype': 'ruby',
+    \ 'name': 'sorbet',
+    \ 'exec': 'srb' })
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

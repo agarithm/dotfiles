@@ -1,6 +1,7 @@
 "============================================================================
-"File:        perl6.vim
-"Description: Syntax checking plugin for syntastic
+"File:        stylelint.vim
+"Description: Syntax checking plugin for syntastic using `stylelint`
+"             (https://github.com/stylelint/stylelint).
 "Maintainer:  LCD 47 <lcd047 at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
@@ -10,16 +11,14 @@
 "
 "============================================================================
 
-# Perl 6 is dead, long live Raku!
-
-if exists('g:loaded_syntastic_perl6_perl6_checker')
+if exists('g:loaded_syntastic_vue_stylelint_checker')
     finish
 endif
-let g:loaded_syntastic_perl6_perl6_checker = 1
+let g:loaded_syntastic_vue_stylelint_checker = 1
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'perl6',
-    \ 'name': 'perl6',
-    \ 'redirect': 'raku/raku'})
+	\ 'filetype': 'vue',
+	\ 'name': 'stylelint',
+	\ 'redirect': 'css/stylelint'})
 
 " vim: set sw=4 sts=4 et fdm=marker:

@@ -1,7 +1,7 @@
 "============================================================================
-"File:        perl6.vim
+"File:        w3.vim
 "Description: Syntax checking plugin for syntastic
-"Maintainer:  LCD 47 <lcd047 at gmail dot com>
+"Maintainer:  Kevin Locke <kevin@kevinlocke.name>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -10,16 +10,14 @@
 "
 "============================================================================
 
-# Perl 6 is dead, long live Raku!
-
-if exists('g:loaded_syntastic_perl6_perl6_checker')
+if exists('g:loaded_syntastic_xhtml_w3_checker')
     finish
 endif
-let g:loaded_syntastic_perl6_perl6_checker = 1
+let g:loaded_syntastic_xhtml_w3_checker = 1
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'perl6',
-    \ 'name': 'perl6',
-    \ 'redirect': 'raku/raku'})
+    \ 'filetype': 'xhtml',
+    \ 'name': 'w3',
+    \ 'redirect': 'html/w3'})
 
 " vim: set sw=4 sts=4 et fdm=marker:
