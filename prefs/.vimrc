@@ -8,7 +8,7 @@ set nobackup
 set nowritebackup
 set mouse=a
 set ttymouse=sgr
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=30
 colo zellner
 
@@ -209,9 +209,11 @@ map <F4> :set number! relativenumber!<cr>
 
 
 " Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
+" search scrolls to keep highlighted item in middle
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
+" additional undo check points
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u

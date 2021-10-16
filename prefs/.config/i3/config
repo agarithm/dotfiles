@@ -32,14 +32,6 @@ exec hsetroot -extend ~/.config/i3/spot-lights.jpg
 font pango:monospace 14
 bindsym $ALT+F4 kill
 
-# ThePrimeagen :  https://github.com/ThePrimeagen/.dotfiles/blob/master/i3/.config/i3/config
-# GET DEM BORDERS OUT OF HEREc:w
-#
-# Thanks Childz
-for_window [class="^.*"] border pixel 4
-                          # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8

@@ -68,6 +68,8 @@ git config --global alias.dt difftool
 git config --global merge.tool vimdiff
 git config --global mergetool.prompt false
 git config --global alias.mt mergetool
+git config --global alias.leaf "log --oneline --graph --decorate --all "
+git config --global alias.tree "log --oneline --graph --decorate --all --simplify-by-decoration"
 git config --global color.diff-highlight.oldNormal    "red bold"
 git config --global color.diff-highlight.oldHighlight "220 88"
 git config --global color.diff-highlight.newNormal    "green bold"

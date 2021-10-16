@@ -151,4 +151,4 @@ export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 
-cd ~/projects/signal-flare-spa
+cd ~/projects/signal-flare-dev
