@@ -207,6 +207,10 @@ map <F1> <Esc>
 map <F3> :FZF<cr>
 map <F4> :set number! relativenumber!<cr>
 
+"Spell Checker
+set spell spelllang=en_us
+
+
 
 " Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
 " search scrolls to keep highlighted item in middle
@@ -218,5 +222,3 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-
-
