@@ -10,6 +10,8 @@ set mouse=a
 set ttymouse=sgr
 set foldmethod=syntax
 set foldlevel=30
+#set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+set belloff=all
 
 match ErrorMsg '\s\+$'
 hi CursorColumn ctermfg=black ctermbg=darkgray cterm=bold guifg=black guibg=darkgray  gui=bold
@@ -170,7 +172,7 @@ autocmd FileType ctp set keywordprg=pman
 autocmd BufRead,BufNewFile *.vue set filetype=html
 
 " Rainbow brackets
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 "Syntactic Settings
 set statusline+=%#warningmsg#
@@ -199,8 +201,10 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
 let g:gutentags_project_root = ['.git','.htaccess']
 
 map <F1> <Esc>
-map <F3> :FZF<cr>
-map <F4> :set number! relativenumber!<cr>
+map <F3> <Esc>:FZF<cr>
+map <F4> <Esc>:set number!<cr>
+map <F7> <Esc>:set spell! spelllang=en_us wrap! lbr! number!<cr>
+map <F10> <Esc>:qa<cr>
 
 
 " Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
