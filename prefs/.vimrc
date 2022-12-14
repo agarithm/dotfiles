@@ -10,7 +10,7 @@ set mouse=a
 set ttymouse=sgr
 set foldmethod=syntax
 set foldlevel=30
-#set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+" set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set belloff=all
 
 match ErrorMsg '\s\+$'
