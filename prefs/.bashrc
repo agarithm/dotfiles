@@ -150,3 +150,7 @@ export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

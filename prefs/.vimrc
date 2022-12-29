@@ -7,8 +7,8 @@ set noswapfile
 set nobackup
 set nowritebackup
 set mouse=a
-set ttymouse=sgr
-set foldmethod=syntax
+" set ttymouse=sgr
+set foldmethod=indent
 set foldlevel=30
 " set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set belloff=all
@@ -205,6 +205,8 @@ map <F3> <Esc>:FZF<cr>
 map <F4> <Esc>:set number!<cr>
 map <F7> <Esc>:set spell! spelllang=en_us wrap! lbr! number!<cr>
 map <F10> <Esc>:qa<cr>
+map <F12> <Esc>:Copilot enable<cr>
+map <F24> <Esc>:Copilot disable<cr>
 
 
 " Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
@@ -216,4 +218,5 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
-
+" Y yanks whole line, as in old days
+nnoremap Y Y
