@@ -205,8 +205,8 @@ map <F3> <Esc>:FZF<cr>
 map <F4> <Esc>:set number!<cr>
 map <F7> <Esc>:set spell! spelllang=en_us wrap! lbr! number!<cr>
 map <F10> <Esc>:qa<cr>
+map <F11> <Esc>:Copilot disable<cr>
 map <F12> <Esc>:Copilot enable<cr>
-map <F24> <Esc>:Copilot disable<cr>
 
 
 " Primeagen top 5: https://www.youtube.com/watch?v=hSHATqh8svM
