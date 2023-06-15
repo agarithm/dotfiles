@@ -1,16 +1,16 @@
 set modelines=0
 set nomodeline
 set nocp
-set background=dark
+set background=light
 set nowrap
 set noswapfile
 set nobackup
 set nowritebackup
 set mouse=a
-" set ttymouse=sgr
+set ttymouse=sgr
 set foldmethod=indent
 set foldlevel=30
-" set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set belloff=all
 
 match ErrorMsg '\s\+$'
@@ -188,6 +188,9 @@ let g:syntastic_auto_jump = 1
 set rtp+=~/projects/tabnine-vim
 set rtp+=~/.fzf
 
+"ALE Settings
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
+
 
 " Where to store tag files
 let g:gutentags_cache_dir = '~/.vim/gutentags'
@@ -204,6 +207,7 @@ map <F1> <Esc>
 map <F3> <Esc>:FZF<cr>
 map <F4> <Esc>:set number!<cr>
 map <F7> <Esc>:set spell! spelllang=en_us wrap! lbr! number!<cr>
+map <F8> <Esc>:ALEFix<cr>
 map <F10> <Esc>:qa<cr>
 map <F11> <Esc>:Copilot disable<cr>
 map <F12> <Esc>:Copilot enable<cr>
@@ -220,3 +224,4 @@ inoremap ? ?<c-g>u
 
 " Y yanks whole line, as in old days
 nnoremap Y Y
+
