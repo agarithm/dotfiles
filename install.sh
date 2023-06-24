@@ -41,7 +41,11 @@ sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y install unattended-upgrades vim mc git tmux cmake build-essential silversearcher-ag exuberant-ctags xclip snapd rename make clang libtool-bin
 #sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd rename
-sudo apt-get -y install ctags
+#
+# Find a way to get Universal Ctags on your system so that Gutentags works in vim.
+#  https://github.com/universal-ctags/ctags
+#
+#sudo apt-get -y install ctags
 #sudo snap install node --channel=12/stable --classic
 #mkdir ~/.npm-global
 #npm config set prefix '~/.npm-global'
