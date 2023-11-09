@@ -21,3 +21,4 @@ git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 git config --global user.name "Mike Agar"
 git config --global user.email "mike.agar@jdpa.com"
+git config --global push.autoSetupRemote true
