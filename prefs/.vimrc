@@ -189,7 +189,8 @@ set rtp+=~/projects/tabnine-vim
 set rtp+=~/.fzf
 
 "ALE Settings
-let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['tslint'], 'yaml': ['yamlfix'], 'python': ['black','isort'] }
+let g:ale_python_black_options='--line-length=160'
 
 
 " Where to store tag files
@@ -199,7 +200,7 @@ let g:gutentags_ctags_exclude = ['*min.css', '*.html', '*min.js', '*.json', '*.x
                             \ '*.phar', '*.ini', '*.rst', '*.md', '*.swp',
                             \ '*vendor/*/test*', '*vendor/*/Test*',
                             \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
-                            \ '*var/cache*', '*var/log*', '*.git*','node_modules']
+                            \ '*var/cache*', '*var/log*', '*.git*','node_modules', 'dist']
 
 let g:gutentags_project_root = ['.git','.htaccess']
 
@@ -225,3 +226,21 @@ inoremap ? ?<c-g>u
 " Y yanks whole line, as in old days
 nnoremap Y Y
 
+" Replace a builtin command using cabbrev
+" http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
+function! CommandAbolish(abbreviation, expansion)
+  execute 'cabbrev ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
+endfunction
+command! -nargs=+ CommandAbolish call CommandAbolish(<f-args>)
+
+CommandAbolish E e
+CommandAbolish Q q
+CommandAbolish QA qa
+CommandAbolish Qa qa
+CommandAbolish W w
+CommandAbolish WQ wq
+CommandAbolish Wq wq
+CommandAbolish wQ wq
+CommandAbolish WQA wqa
+CommandAbolish WQa wqa
+CommandAbolish Wqa wqa

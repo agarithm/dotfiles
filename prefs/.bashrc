@@ -97,7 +97,7 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-PATH="$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:~/.npm-global/bin:$PATH"
+PATH="./bin:$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:~/.npm-global/bin:$PATH"
 # get current branch in git repo
 function parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -146,11 +146,9 @@ function parse_git_dirty {
 }
 
 MACHNAME=`uname -a |cut -f2 -d ' '`
-export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
+export PS1="\[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(/opt/homebrew/bin/direnv hook bash)"

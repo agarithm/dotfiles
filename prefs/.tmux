@@ -8,12 +8,18 @@ set -g history-limit 10000
 setw -g mode-keys vi
 setw -g monitor-activity on
 bind-key Escape copy-mode #default = [
-bind-key v split-window -h
-bind-key s split-window -v
+bind-key v split-window -h -c "#{pane_current_path}"
+bind-key s split-window -v -c "#{pane_current_path}"
+bind-key '"' split-window -v -c "#{pane_current_path}"
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'V' send -X select-line;
+#LINUX
 bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
+
+#MacOS Highlight Copy to System
+#bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+#bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
 
 
 ######################
@@ -52,6 +58,7 @@ set-window-option -g monitor-activity off
 set-option -g bell-action none
 
 set -g default-terminal "xterm-256color"
+set-option -g default-command "/bin/bash --rcfile ~/.bashrc"
 
 # The modes {
 setw -g clock-mode-colour colour135
