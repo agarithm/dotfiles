@@ -5,7 +5,7 @@ git config --global core.editor "vim"
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.dt difftool
-git config --global merge.tool vimdiff
+git config --global merge.tool vimdiff3  #vimdiff3 means 3rd layout option, only merged file is shown
 git config --global mergetool.prompt false
 git config --global alias.mt mergetool
 git config --global color.diff-highlight.oldNormal    "red bold"
