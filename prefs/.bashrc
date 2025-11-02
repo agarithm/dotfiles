@@ -81,6 +81,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias mail='ssh -i ~/.ssh/id_rsa ace@mail.agarithm.com'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -159,3 +160,42 @@ export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ace/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ace/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ace/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ace/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+new_conda() {
+    # Get the absolute path of the current directory
+    local dir_path=$(pwd)
+
+    # Convert the path into a slug. Replace '/' with '_'
+    local env_name="env_$(echo $dir_path | sed 's/\//_/g')"
+
+    # Create a new Conda environment with the generated name
+    conda create --name "$env_name" python=3.8 -y
+
+    # Create or overwrite a .envrc file in the current directory with the layout command for direnv
+    echo "layout anaconda $env_name" > .envrc
+
+    # Allow direnv to use the new .envrc file
+    direnv allow
+
+    echo "Conda environment $env_name created and registered in .envrc."
+}
+
+
+
+eval "$(direnv hook bash)"
+. "$HOME/.cargo/env"

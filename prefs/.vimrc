@@ -1,7 +1,7 @@
 set modelines=0
 set nomodeline
 set nocp
-set background=light
+set background=dark
 set nowrap
 set noswapfile
 set nobackup
@@ -170,6 +170,8 @@ filetype on
 autocmd FileType php set keywordprg=pman
 autocmd FileType ctp set keywordprg=pman
 autocmd BufRead,BufNewFile *.vue set filetype=html
+autocmd BufRead,BufNewFile *.jsx set filetype=javascript
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript
 
 " Rainbow brackets
 let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle

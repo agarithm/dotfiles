@@ -1,4 +1,4 @@
-# Copilot.vim
+# GitHub Copilot for Vim and Neovim
 
 GitHub Copilot uses OpenAI Codex to suggest code and entire functions in
 real-time right from your editor.  Trained on billions of lines of public
@@ -61,4 +61,4 @@ See `:help copilot` for more information.
 
 We’d love to get your help in making GitHub Copilot better!  If you have
 feedback or encounter any problems, please reach out on our [Feedback
-forum](https://github.com/github-community/community/discussions/categories/copilot).
+forum](https://github.com/orgs/community/discussions/categories/copilot).
