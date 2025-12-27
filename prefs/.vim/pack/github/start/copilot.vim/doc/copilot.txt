@@ -26,23 +26,46 @@ COMMANDS                                        *:Copilot*
 :Copilot status         Check if GitHub Copilot is operational for the current
                         buffer and report on any issues.
 
+                                                *:Copilot_model*
+:Copilot model          If a preview or other alternate model for completions
+                        is available, provides an interactive interface for
+                        enabling it for the rest of the current Vim/Neovim
+                        session.  Note that typically the number of available
+                        completions models is one, rendering this command
+                        inert.
+
                                                 *:Copilot_panel*
 :Copilot panel          Open a window with up to 10 completions for the
-                        current buffer.  Use <CR> to accept a solution.  Maps
-                        are also provided for [[ and ]] to jump from solution
-                        to solution.  This is the default command if :Copilot
-                        is called without an argument.
+                        current buffer.  Use <CR> to accept a completion.
+                        Maps are also provided for [[ and ]] to jump from
+                        completion to completion.
 
                                                 *:Copilot_version*
 :Copilot version        Show version information.
 
-                                                *:Copilot_feedback*
-:Copilot feedback       Open the website for providing GitHub Copilot
-                        feedback.  Be sure to include |:Copilot_version|
-                        output when reporting a bug.
+                                                *:Copilot_upgrade*
+:Copilot upgrade        Upgrade the Copilot Language Server to the latest
+                        version with `npx`.  This works by temporarily setting
+                        |g:copilot_version| to "latest" and restarting.
 
 OPTIONS                                         *copilot-options*
 
+g:copilot_version       Specify a version constraint passed to `npx` when
+                        running the Copilot Language Server.  By default, this
+                        is a minor version constraint like "^1.400.0" that
+                        matches a known good version but allows minor version
+                        updates.  You can pin this to a specific version, or
+                        use the special value of "latest" which causes `npx`
+                        to always fetch the latest version at startup.
+>
+                        let g:copilot_version = 'latest'
+<
+                        As a special case, setting this to v:false will
+                        disable the use of `npx` and use a static version of
+                        the language server embedded in the plugin.
+>
+                        let g:copilot_version = v:false
+<
                                                 *g:copilot_filetypes*
 g:copilot_filetypes     A dictionary mapping file types to their enabled
                         status.  Most file types are enabled by default, so
@@ -74,6 +97,13 @@ g:copilot_node_command  Tell Copilot what `node` binary to use with
                         let g:copilot_node_command =
                               \ "~/.nodenv/versions/18.18.0/bin/node"
 <
+                                                *g:copilot_enterprise_uri*
+g:copilot_enterprise_uri
+                        If you are using GitHub Copilot Enterprise, set this
+                        to the URI of your GitHub Enterprise instance.
+>
+                        let g:copilot_enterprise_uri = 'https://DOMAIN.ghe.com'
+<
                                                 *g:copilot_proxy*
 g:copilot_proxy         Tell Copilot what proxy server to use.
 >
@@ -98,8 +128,7 @@ g:copilot_proxy_strict_ssl
                                                 *g:copilot_workspace_folders*
 g:copilot_workspace_folders
                         A list of "workspace folders" or project roots that
-                        Copilot may use to improve to improve the quality of
-                        suggestions.
+                        Copilot may use to improve the quality of suggestions.
 >
                         let g:copilot_workspace_folders =
                                \ ["~/Projects/myproject"]
