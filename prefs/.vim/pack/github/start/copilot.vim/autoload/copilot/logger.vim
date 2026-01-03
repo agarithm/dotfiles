@@ -1,9 +1,24 @@
+<<<<<<< HEAD
+=======
+if !exists('s:log_file')
+  let s:log_file = tempname() . '-copilot.log'
+  try
+    call writefile([], s:log_file)
+  catch
+  endtry
+endif
+
+>>>>>>> master
 let s:logs = []
 
 function! copilot#logger#BufReadCmd() abort
   try
     setlocal modifiable noreadonly
+<<<<<<< HEAD
     silent call deletebufline('', 1, '$')
+=======
+    call deletebufline('', 1, '$')
+>>>>>>> master
     if !empty(s:logs)
       call setline(1, s:logs)
     endif
@@ -18,6 +33,12 @@ function! copilot#logger#Raw(level, message) abort
   let lines = type(a:message) == v:t_list ? copy(a:message) : split(a:message, "\n", 1)
   let lines[0] = strftime('[%Y-%m-%d %H:%M:%S] ') . get(s:level_prefixes, a:level, '[UNKNOWN] ') . get(lines, 0, '')
   try
+<<<<<<< HEAD
+=======
+    if !filewritable(s:log_file)
+      return
+    endif
+>>>>>>> master
     call map(lines, { k, L -> type(L) == v:t_func ? call(L, []) : L })
     call extend(s:logs, lines)
     let overflow = len(s:logs) - get(g:, 'copilot_log_history', 10000)
@@ -40,7 +61,11 @@ function! copilot#logger#Raw(level, message) abort
 endfunction
 
 function! copilot#logger#Debug(...) abort
+<<<<<<< HEAD
   if empty(get(g:, 'copilot_debug'))
+=======
+  if $COPILOT_AGENT_VERBOSE !~# '^\%(1\|true\)$'
+>>>>>>> master
     return
   endif
   call copilot#logger#Raw(4, a:000)
@@ -65,8 +90,13 @@ endfunction
 function! copilot#logger#Exception(...) abort
   if !empty(v:exception) && v:exception !=# 'Vim:Interrupt'
     call copilot#logger#Error('Exception: ' . v:exception . ' @ ' . v:throwpoint)
+<<<<<<< HEAD
     let client = copilot#RunningClient()
     if !empty(client)
+=======
+    let agent = copilot#RunningAgent()
+    if !empty(agent)
+>>>>>>> master
       let [_, type, code, message; __] = matchlist(v:exception, '^\%(\(^[[:alnum:]_#]\+\)\%((\a\+)\)\=\%(\(:E-\=\d\+\)\)\=:\s*\)\=\(.*\)$')
       let stacklines = []
       for frame in split(substitute(v:throwpoint, ', \S\+ \(\d\+\)$', '[\1]', ''), '\.\@<!\.\.\.\@!')
@@ -81,14 +111,22 @@ function! copilot#logger#Exception(...) abort
           call add(stacklines, {'function': '[redacted]'})
         endif
       endfor
+<<<<<<< HEAD
       return client.Request('telemetry/exception', {
+=======
+      return agent.Request('telemetry/exception', {
+>>>>>>> master
             \ 'transaction': a:0 ? a:1 : '',
             \ 'platform': 'other',
             \ 'exception_detail': [{
             \ 'type': type . code,
             \ 'value': message,
             \ 'stacktrace': stacklines}]
+<<<<<<< HEAD
             \ }, v:null, function('copilot#util#Nop'))
+=======
+            \ })
+>>>>>>> master
     endif
   endif
 endfunction

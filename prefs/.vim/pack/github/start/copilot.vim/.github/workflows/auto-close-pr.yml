@@ -14,7 +14,11 @@ jobs:
           gh pr close ${{ github.event.pull_request.number }} --comment \
           "At the moment we are not accepting contributions to the repository.
 
+<<<<<<< HEAD
           Feedback for Copilot.vim can be given in the [feedback forum](https://github.com/github/copilot.vim/issues)."
+=======
+          Feedback for Copilot.vim can be given in the [Copilot community discussions](https://github.com/orgs/community/discussions/categories/copilot)."
+>>>>>>> master
         env:
           GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -26,6 +26,7 @@ COMMANDS                                        *:Copilot*
 :Copilot status         Check if GitHub Copilot is operational for the current
                         buffer and report on any issues.
 
+<<<<<<< HEAD
                                                 *:Copilot_model*
 :Copilot model          If a preview or other alternate model for completions
                         is available, provides an interactive interface for
@@ -39,10 +40,19 @@ COMMANDS                                        *:Copilot*
                         current buffer.  Use <CR> to accept a completion.
                         Maps are also provided for [[ and ]] to jump from
                         completion to completion.
+=======
+                                                *:Copilot_panel*
+:Copilot panel          Open a window with up to 10 completions for the
+                        current buffer.  Use <CR> to accept a solution.  Maps
+                        are also provided for [[ and ]] to jump from solution
+                        to solution.  This is the default command if :Copilot
+                        is called without an argument.
+>>>>>>> master
 
                                                 *:Copilot_version*
 :Copilot version        Show version information.
 
+<<<<<<< HEAD
                                                 *:Copilot_upgrade*
 :Copilot upgrade        Upgrade the Copilot Language Server to the latest
                         version with `npx`.  This works by temporarily setting
@@ -66,6 +76,15 @@ g:copilot_version       Specify a version constraint passed to `npx` when
 >
                         let g:copilot_version = v:false
 <
+=======
+                                                *:Copilot_feedback*
+:Copilot feedback       Open the website for providing GitHub Copilot
+                        feedback.  Be sure to include |:Copilot_version|
+                        output when reporting a bug.
+
+OPTIONS                                         *copilot-options*
+
+>>>>>>> master
                                                 *g:copilot_filetypes*
 g:copilot_filetypes     A dictionary mapping file types to their enabled
                         status.  Most file types are enabled by default, so
@@ -97,6 +116,7 @@ g:copilot_node_command  Tell Copilot what `node` binary to use with
                         let g:copilot_node_command =
                               \ "~/.nodenv/versions/18.18.0/bin/node"
 <
+<<<<<<< HEAD
                                                 *g:copilot_enterprise_uri*
 g:copilot_enterprise_uri
                         If you are using GitHub Copilot Enterprise, set this
@@ -104,6 +124,8 @@ g:copilot_enterprise_uri
 >
                         let g:copilot_enterprise_uri = 'https://DOMAIN.ghe.com'
 <
+=======
+>>>>>>> master
                                                 *g:copilot_proxy*
 g:copilot_proxy         Tell Copilot what proxy server to use.
 >
@@ -128,7 +150,12 @@ g:copilot_proxy_strict_ssl
                                                 *g:copilot_workspace_folders*
 g:copilot_workspace_folders
                         A list of "workspace folders" or project roots that
+<<<<<<< HEAD
                         Copilot may use to improve the quality of suggestions.
+=======
+                        Copilot may use to improve to improve the quality of
+                        suggestions.
+>>>>>>> master
 >
                         let g:copilot_workspace_folders =
                                \ ["~/Projects/myproject"]

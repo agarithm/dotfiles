@@ -2,8 +2,13 @@ function! copilot#handlers#window_logMessage(params, ...) abort
   call copilot#logger#Raw(get(a:params, 'type', 6), get(a:params, 'message', ''))
 endfunction
 
+<<<<<<< HEAD
 function! copilot#handlers#window_showMessageRequest(params, instance, ...) abort
   let choice = inputlist([a:instance.name . "\n" . a:params.message . "\n\nRequest Actions:"] +
+=======
+function! copilot#handlers#window_showMessageRequest(params, ...) abort
+  let choice = inputlist([a:params.message . "\n\nRequest Actions:"] +
+>>>>>>> master
         \ map(copy(get(a:params, 'actions', [])), { i, v -> (i + 1) . '. ' . v.title}))
   return choice > 0 ? get(a:params.actions, choice - 1, v:null) : v:null
 endfunction

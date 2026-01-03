@@ -1,9 +1,12 @@
 let s:deferred = []
 
+<<<<<<< HEAD
 function! copilot#util#Nop(...) abort
   return v:null
 endfunction
 
+=======
+>>>>>>> master
 function! copilot#util#Defer(fn, ...) abort
   call add(s:deferred, function(a:fn, a:000))
   return timer_start(0, function('s:RunDeferred'))
@@ -17,6 +20,7 @@ function! s:RunDeferred(...) abort
   call timer_start(0, function('s:RunDeferred'))
   call call(Fn, [])
 endfunction
+<<<<<<< HEAD
 
 function! copilot#util#UTF16Width(str) abort
   return strchars(substitute(a:str, "\\%#=2[^\u0001-\uffff]", "  ", 'g'))
@@ -59,3 +63,5 @@ function! copilot#util#AppendPosition() abort
   let col_utf16 = copilot#util#UTF16Width(strpart(line, 0, col_byte))
   return {'line': line('.') - 1, 'character': col_utf16}
 endfunction
+=======
+>>>>>>> master
