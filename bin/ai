@@ -1,16 +1,1 @@
-# !/bin/bash
-# Bash Script to call github's copilot command line chat with passed in arguments
-cd ~
-#gh copilot explain $@
-
-#MODEL=deepseek-r1
-#MODEL=qwen2.5-coder
-#MODEL=qwen3
-#MODEL=phi4  # pretty good, fall back to this if others fail
-#MODEL=granite4:tiny-h # fast (smallest) and good
-#MODEL=ibm/granite4:small-h-q2_k # A Thinking model 16G size, not great, a bit weird.
-MODEL=gpt-oss
-
-ollama run $MODEL "$@, I am an expert, try to be brief and concise with examples when possible" | tee /dev/tty | glow -w $(tput cols)
-
-
+/home/ace/projects/agent_mode_cli/bin/ai
