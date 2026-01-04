@@ -64,7 +64,7 @@ cd ~/projects
 #sudo ~/.fzf/install
 
 # diff-so-fancy
-git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
+git clone https://github.com/so-fancy/diff-so-fancy.git
 git config --global core.pager "~/.dsf/diff-so-fancy | less -SrRFX --pattern '^(Date|added|deleted|modified):'"
 git config --global color.ui true
 git config --global core.editor "vim"
