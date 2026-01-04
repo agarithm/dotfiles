@@ -36,10 +36,10 @@ make_link $DOT_BASE/.ctags ~/.ctags
 # make_link $DOT_BASE/.config/i3 ~/.config/i3
 
 cd ~
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get -y install unattended-upgrades vim mc git tmux cmake build-essential silversearcher-ag exuberant-ctags xclip snapd rename make clang libtool-bin less
+#sudo apt-get -y update
+#sudo apt-get -y upgrade
+#sudo apt-get -y dist-upgrade
+#sudo apt-get -y install unattended-upgrades vim mc git tmux cmake build-essential silversearcher-ag exuberant-ctags xclip snapd rename make clang libtool-bin less
 #sudo apt-get -y install unattended-upgrades vim mc git tmux python cmake python3-dev python3-pip build-essential silversearcher-ag php-pear php-cli exuberant-ctags python2.7 xclip snapd rename
 #
 # Find a way to get Universal Ctags on your system so that Gutentags works in vim.
