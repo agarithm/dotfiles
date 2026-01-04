@@ -60,8 +60,8 @@ cd ~/projects
 #cd tabnine-vim
 #sudo ./install.py
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-sudo ~/.fzf/install
+#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#sudo ~/.fzf/install
 
 # diff-so-fancy
 git clone git@github.com:so-fancy/diff-so-fancy.git ~/.dsf
