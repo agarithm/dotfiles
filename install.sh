@@ -51,7 +51,9 @@ sudo apt-get -y install unattended-upgrades vim mc git tmux cmake build-essentia
 #npm config set prefix '~/.npm-global'
 #sudo pear install doc.php.net/pman
 
-mkdir ~/projects
+if [ ! -d ~/projects ]; then
+    mkdir ~/projects
+fi
 cd ~/projects
 
 #git clone https://github.com/codota/tabnine-vim.git

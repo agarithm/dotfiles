@@ -103,11 +103,7 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-<<<<<<< HEAD
 PATH="./bin:$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:~/.npm-global/bin:/usr/local/cuda-12.1/bin:$PATH"
-=======
-PATH="./bin:$HOME/bin:$HOME/.local/bin:$HOME/backup/old_dotfiles/bin:~/.npm-global/bin:$PATH"
->>>>>>> master
 # get current branch in git repo
 function parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -156,9 +152,8 @@ function parse_git_dirty {
 }
 
 MACHNAME=`uname -a |cut -f2 -d ' '`
-export PS1="\[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
+export PS1="\[\e[41m\] $MACHNAME \[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\w\[\e[m\]\[\e[31m\] \[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
-<<<<<<< HEAD
 export EDITOR=vim
 export BROWSER=/usr/bin/chrome
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
@@ -209,9 +204,7 @@ new_conda() {
 
 eval "$(direnv hook bash)"
 . "$HOME/.cargo/env"
-=======
 export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(/opt/homebrew/bin/direnv hook bash)"
->>>>>>> master
