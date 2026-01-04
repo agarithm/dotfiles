@@ -1,6 +1,0 @@
-*.vim eol=lf
-<<<<<<< HEAD
-/copilot-language-server/** -whitespace -diff
-=======
-/dist/** -whitespace -diff
->>>>>>> master

@@ -33,7 +33,7 @@ make_link $DOT_BASE/.tmux ~/.tmux
 make_link $DOT_BASE/.vimrc ~/.vimrc
 make_link $DOT_BASE/.vim ~/.vim
 make_link $DOT_BASE/.ctags ~/.ctags
-make_link $DOT_BASE/.config/i3 ~/.config/i3
+# make_link $DOT_BASE/.config/i3 ~/.config/i3
 
 cd ~
 sudo apt-get -y update
