@@ -89,11 +89,11 @@ git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
 
-echo " "
-echo " "
-echo "SETUP GIT IDENTITY "
-echo "~~~~~~~~~~~~~~~~~~ "
-read -p "Full Name for git commits: " GITNAME
-read -p "Email Address for git commits: " GITEMAIL
-git config --global user.name "$GITNAME"
-git config --global user.email "$GITEMAIL"
+# echo " "
+# echo " "
+# echo "SETUP GIT IDENTITY "
+# echo "~~~~~~~~~~~~~~~~~~ "
+# read -p "Full Name for git commits: " GITNAME
+# read -p "Email Address for git commits: " GITEMAIL
+# git config --global user.name "$GITNAME"
+# git config --global user.email "$GITEMAIL"
